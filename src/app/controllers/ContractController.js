@@ -7,8 +7,13 @@ class ContractController {
     response.json(contacts);
   }
 
-  show() {
-    // Obter um registro
+  async show(request, response) {
+    const { id } = request.params;
+    const contact = await ContactRepository.findById(id);
+
+    if (!contact) return response.status(404, { error: "User not found." });
+
+    response.json(contact);
   }
 
   store() {
