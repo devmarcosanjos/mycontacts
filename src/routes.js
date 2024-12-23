@@ -14,6 +14,7 @@ router.get(
 );
 router.get("/contacts/:id", ContractController.show);
 router.post("/contacts", ContractController.store);
+router.put("/contacts/:id", ContractController.update);
 router.delete("/contacts/:id", ContractController.delete);
 
 module.exports = router;
