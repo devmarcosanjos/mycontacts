@@ -60,7 +60,6 @@ class ContractRepository {
   update(id, { name, email, phone, category_id }) {
     return new Promise((resolve) => {
       const updateContact = {
-        id,
         name,
         email,
         phone,
